@@ -12,16 +12,16 @@
 const ROW = 30; //Row Size of the Grid
 const COL = 50; //Column Size of the Grid
 
-// Default Co-ordinates
+// These are the defalt co-ordinates where the firefly appears at start
 var x = 5;
 var y = 5;
 
 
 /**
- * This Function Generate a Random Move of 1 Unit.
+ * Generate a Random Move of 1 Unit.
  */
 function getRandomMove() {
-    //Create Random Number
+    //Create Random Number which is in between [-1,0,1]
     let move = Math.floor(Math.random() * 8);
     switch (move) {
         case 0:  return { dx: -1, dy: 0 };   // Move left
@@ -38,7 +38,7 @@ function getRandomMove() {
 
 
 /**
- * This Function Prints Grid With Boundaries.
+ * Prints Grid With Boundaries.
 */
 
 function printPattern() {
@@ -72,7 +72,7 @@ function printPattern() {
 }
 
 /**
- * This Function Called Runner :
+ *  Runner :
  *  It Clears the Console Outputs
  *  Print the Gird with Firefly position with defined Co-ordinates (x,y)
  *  Change the Co-ordinate
