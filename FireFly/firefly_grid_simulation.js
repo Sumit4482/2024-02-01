@@ -1,10 +1,10 @@
 /*
  Problem Statement : 
  To Create a Grid of Height 30 and Width 50 which will be Fixed.
- Inside the Gird there is special character(*) present.
+ Inside the Gird there is a special character(*) present.
  The Special Character (*) is Called FireFly.
  The Firefly will populate inside the Gird at any Co-ordinate.
- The Firefly will move 1 Unit from its postion to any direction. 
+ The Firefly will move 1 Unit from its position in any direction. 
 */
 
 
@@ -50,19 +50,19 @@ function printPattern() {
             if ((i == 0 && j == 0) || (i == 0 && j == COL) || (i == ROW && j == 0) || (i == ROW && j == COL)) {
                 process.stdout.write("+");
             } 
-            //Top and Bottom Boundries 
+            //Top and Bottom Boundaries 
             else if ((i == 0 && j != 0 && j < COL) || (i == ROW && j != 0 && j < COL)) {
                 process.stdout.write('_');
             } 
-            //Left and Right Boundries
+            //Left and Right Boundaries
             else if ((j == 0 && i > 0 && i < COL) || (j == COL && i > 0 && i < ROW)) {
                 process.stdout.write('|');
             } 
-            // FireFlyyyyyyyyyy
+            // FireFly
             else if (i == x && j == y) {
                 process.stdout.write("*");
             } 
-            //Spaceeee
+            //Space
             else {
                 process.stdout.write(" ");
             }
@@ -80,10 +80,10 @@ function printPattern() {
 
 function runner() {
     console.clear(); // Clears the Console
-    printPattern();
-    const move = getRandomMove(); 
-    x += move.dx;
-    y += move.dy;
+    printPattern();  // Prints Pattern
+    const move = getRandomMove();  // Get the Move
+    x += move.dx; // Adds the Units in X-Co-ordinate
+    y += move.dy; // Adds the Units in Y-Co-ordinate
 
     // Ensure the '*' stays within the grid bounds
     x = Math.max(1, Math.min(x, ROW - 1));
@@ -94,5 +94,5 @@ function runner() {
 }
 
 
-//Run Code Sevral Times
+//Run Code Several Times
 setInterval(runner, 500)
